@@ -1,0 +1,193 @@
+﻿<!-- 
+==============================================================================================
+	KTML 4 Editor configuration file
+	================================
+	
+	This file has two types of configuration settins:
+	
+	1. appSettings-like Tags: 
+	<add key="KeyName" value="KeyValue"/>
+	These settings can also be placed in the web.config file, under <appSettings> tag. 
+	However, if a KTML instance has a ktml4.config.xml file specified
+	and this file has keys that are also present in the web.config file
+	the settings from ktm4.config.xml override the ones from web.config 
+	(they are more specific).
+	
+	- <add key="KT_prefered_image_lib" value=".net"/> 
+	Sets the preferred image library to 
+	be used for the image operations. Possible values ".net" | "imagemagick". 
+	If set to "imagemagick", this free image processing library (http://www.imagemagick.org/script/index.php)
+	must be installed on the server and the next tag is required:
+	
+	- <add key="KT_prefered_imagemagick_path" value="C:\Program Files\ImageMagick-6.2.3-Q16"/>
+	Sets the path to the imagemagick instalation folder on the server.
+	
+	- <add key="KT_prefered_tidy_path" value="C:\Windows\"/>
+	Sets the path to the Tidy (http://tidy.sourceforge.net/) instalation folder.
+	Tidy is used for Xhtml operations.
+	
+	- <add key="KT_prefered_aspell_path" value="C:\Program Files\Aspell\bin\"/>
+	Sets the path to the Aspell (http://aspell.net/) bin folder.
+	Aspell is used for Spellcheck operations.
+	
+	optional:
+	- <add key="KTML4_XHTMLTempPath" value="~/includes/ktm/plugins/temp/.tidy/"/>
+	Sets the path to a folder used for writing temp files required for Xhtml operations
+	with Tidy.
+	
+	optional:
+	- <add key="KTML4_XHTMLConfigPath" value="~/includes/ktm/plugins/modules/xhtml/.tidyconf"/>
+	Sets the path to .tidyconf file required for Xhtml operations with Tidy.
+	
+	optional:
+	- <add key="KTML4_aspellTempPath" value="~/includes/ktm/plugins/temp/.aspell/"/>
+	Sets the path to a folder used for writing temp files required for Spellcheck operations
+	with Aspell.
+	
+	- <add key="KTML4_THUMBNAIL_FOLDER" value=".thumbnails/"/>
+	Sets the name for the folder used for saving the thumbnails of the images listed with 
+	file browser. For each [folder] with images listed with the integrated KTML file browser 
+	there will be a [folder]/[KTML4_THUMBNAIL_FOLDER] that will keep the generated thumbnails.
+	
+	- <add key="KTML4_THUMBNAIL_WIDTH" value="100"/>
+	Sets the width size in pixels for the generated thumbnails.
+	
+	- <add key="KTML4_THUMBNAIL_HEIGHT" value="100"/>
+	Sets the height size in pixels for the generated thumbnails.
+
+	- <add key="KTML4_IMAGE_WIDTH" value="480"/>
+	Sets the width size in pixels for the preview image opened in Image Editor.
+
+	- <add key="KTML4_IMAGE_HEIGHT" value="480"/>
+	Sets the height size in pixels for the preview image opened in Image Editor.
+	
+    - <add key="KTML4_MAX_UPLOAD_IMAGE_WIDTH" value="500"/>
+    Sets the upload maximum allowed width size in pixels for images.
+    
+   	- <add key="KTML4_MAX_UPLOAD_IMAGE_HEIGHT" value="350"/>
+   	Sets the upload maximum allowed height size in pixels for images.
+   	
+   	2. Custom Tags:
+	-	<KTML4_GLOBALS>
+			<var name="add_new_paragraph_on_enter">true</var>
+			<var name="special_chars"><![CDATA[&copy;,&nbsp;,&quot;,&lt;,&gt;]]></var>
+			<var name="colors">#FF0000,#00FF00,#0000FF</var>
+			<var name="fonts">Arial, Helvetica, sans-serif;|"Times New Roman", Times, serif;|"Courier New", Courier, mono;|Georgia, "Times New Roman", Times, serif;|Verdana, Arial, Helvetica, sans-serif;|Geneva, Arial, Helvetica, sans-serif;</var>
+		</KTML4_GLOBALS>
+	Sets the variables to be exported to javascript:
+		var $KTML4_GLOBALS = {};
+		$KTML4_GLOBALS['add_new_paragraph_on_enter'] = 'true';
+		....
+	
+	-	<KTML4_languagelist>
+			<language id="en_GB" dictname="british" friendlyname="English (UK)"/>
+			<language id="en_US" dictname="american" friendlyname="English (USA)"/>
+			<language id="de" dictname="german" friendlyname="German"/>
+			<language id="es" dictname="espanol" friendlyname="Spanish"/>
+			<language id="nl" dictname="dutch" friendlyname="Dutch"/>
+			<language id="no" dictname="norwegian" friendlyname="Norwegian"/>
+			<language id="it" dictname="italian" friendlyname="Italian"/>
+			<language id="el" dictname="greek" friendlyname="Greek"/>
+			<language id="ro" dictname="romanian" friendlyname="Romanian"/>
+		</KTML4_languagelist>
+	Sets the list with the allowed dictionaries to be used with Spellcheck operations.
+	The first parameter ("id") must match the one received when
+	getting the list of Aspell available dictionaries ( dump dicts ).
+	
+	
+	optional:
+	-	<KTML4_custom_modules>
+			<module name="Date" assembly="~/bin/KtmlCustomModule.dll" methods="GetCurrentDate,AnotherTestMethod"/>
+		</KTML4_custom_modules>
+   	When programming custom modules for KTML you must add a <module> tag under <KTML4_custom_modules>.
+   	name:		the name of the module. The corresponding class should be Ktml[ModuleName]Module and
+   				must be implementing under InterAKT.WebControls.Modules namespace.
+   	assembly:	the path to the assembly containing the module.
+   	methods:	comma separated method names that are exposed by the module.
+   	
+   	optional:
+   	-	<Toolbars>
+			<Toolbar name="Standard" row="1" buttons="Cut,Copy,Paste,Undo,Redo,FindReplace,ToggleVisible,Spellcheck,ToggleEditMode,Help" />
+			<Toolbar name="Formatting" row="1" buttons="Bold,Italic,Underline,AlignLeft,AlignCenter,AlignRight,AlignJustify,NumberedList,BulletedList,Outdent,Indent,CleanMenu,ForegroundColor,BackgroundColor,Superscript,Subscript" />
+			<Toolbar name="Styles" row="2" buttons="HeadingList,StyleList,FontTypeList,FontSizeList" />
+			<Toolbar name="Insert" row="2" buttons="InsertLink,InsertAnchor,InsertTable,InsertImage,InsertFile,InsertTemplate,HorizontalRule,InsertCharacter" />
+			<Toolbar name="Form" row="3" buttons="InsertForm,InsertTextField,InsertTextarea,InsertButton,InsertCheckbox,InsertRadioButton,InsertListMenu,InsertFileField,InsertHiddenField,InsertFieldset,InsertLabel" />
+		</Toolbars>
+	When ToolbarPresets property of a KTML instance is set to ToolbarPresets.Custom you
+	can set a custom set of toolbars with buttons of type KtmlButton.
+	These custom toolbars can be set either in page (with <Toolbars> as a child of <iakt:Ktml>)
+	or in the ktml4.config.xml
+	<Toolbar> format:
+	name:		the name of the toolbar.
+	row:		the row on each the toolbars appears in the editor.
+	buttons:	comma separated names of buttons.
+	
+		
+=============================================================================================== 
+-->
+
+<ktmlconfig>
+	<add key="KT_prefered_image_lib" value=".net"/>
+	<add key="KT_prefered_imagemagick_path" value=""/>
+	<add key="KT_prefered_tidy_path" value="C:\Windows\"/>
+	<add key="KT_prefered_aspell_path" value="C:\Program Files\Aspell\bin\"/>
+	<!--
+	<add key="KTML4_XHTMLTempPath" value="~/includes/ktm/plugins/temp/.tidy/"/>
+	<add key="KTML4_XHTMLConfigPath" value="~/includes/ktm/plugins/modules/xhtml/.tidyconf"/>
+	<add key="KTML4_aspellTempPath" value="~/includes/ktm/plugins/temp/.aspell/"/>
+	-->
+	
+	<add key="KTML4_THUMBNAIL_FOLDER" value=".thumbnails/"/>
+	<add key="KTML4_THUMBNAIL_WIDTH" value="100"/>
+	<add key="KTML4_THUMBNAIL_HEIGHT" value="100"/>
+	<add key="KTML4_IMAGE_WIDTH" value="480"/>
+	<add key="KTML4_IMAGE_HEIGHT" value="360"/>
+
+	<add key="KTML4_MAX_UPLOAD_IMAGE_WIDTH" value="800"/>
+	<add key="KTML4_MAX_UPLOAD_IMAGE_HEIGHT" value="600"/>
+    <add key="KTML4_online_interakt_spellcheck" value="false"/>
+    
+  <KTML4_GLOBALS>
+    <var name="allowed_tags_list"></var>
+    <var name="denied_tags_list">script,iframe,frame</var>
+    <var name="add_new_paragraph_on_enter">true</var>
+    <var name="special_chars"><![CDATA[]]></var>
+    <var name="colors"></var>
+    <var name="fonts">Arial, Helvetica, sans-serif;|"Times New Roman", Times, serif;|"Courier New", Courier, mono;|Georgia, "Times New Roman", Times, serif;|Verdana, Arial, Helvetica, sans-serif;|Geneva, Arial, Helvetica, sans-serif;</var>
+    <var name="editor_inner_dimensions">false</var>
+    <var name="stop_parent_scroll_on_focus">true</var>
+    <var name="auto_clean_on_paste">word</var>
+    <var name="skip_doctype_check">false</var>
+    <var name="logical_emphasis">true</var>
+    <var name="insertlink_prompt_for_url">false</var>
+    <var name="debug">false</var>    
+  </KTML4_GLOBALS>
+
+  <KTML4_languagelist>
+		<language id="en_GB" dictname="british" friendlyname="English (UK)"/>
+		<language id="en_US" dictname="american" friendlyname="English (USA)"/>
+		<language id="de" dictname="german" friendlyname="German"/>
+		<language id="es" dictname="espanol" friendlyname="Spanish"/>
+		<language id="fr" dictname="french" friendlyname="French"/>
+		<language id="nl" dictname="dutch" friendlyname="Dutch"/>
+		<language id="no" dictname="norwegian" friendlyname="Norwegian"/>
+		<language id="it" dictname="italian" friendlyname="Italian"/>
+		<language id="el" dictname="greek" friendlyname="Greek"/>
+		<language id="ro" dictname="romanian" friendlyname="Romanian"/>
+		<language id="cz" dictname="czech" friendlyname="Czech"/>
+  </KTML4_languagelist>
+
+	<!--
+	<KTML4_custom_modules>
+		<module name="Date" assembly="~/bin/KtmlCustomModule.dll" methods="GetCurrentDate,AnotherTestMethod"/>
+	</KTML4_custom_modules>
+
+	<Toolbars>
+		<Toolbar name="Standard" row="1" buttons="Cut,Copy,Paste,Undo,Redo,FindReplace,ToggleVisible,Spellcheck,ToggleEditMode,ToggleFullScreen,Help" />
+		<Toolbar name="Formatting" row="1" buttons="Bold,Italic,Underline,AlignLeft,AlignCenter,AlignRight,AlignJustify,NumberedList,BulletedList,Outdent,Indent,CleanMenu,ForegroundColor,BackgroundColor,Superscript,Subscript" />
+		<Toolbar name="Styles" row="2" buttons="HeadingList,StyleList,FontTypeList,FontSizeList" />
+		<Toolbar name="Insert" row="2" buttons="InsertLink,InsertAnchor,InsertTable,InsertImage,InsertFile,InsertTemplate,HorizontalRule,InsertCharacter" />
+		<Toolbar name="Form" row="3" buttons="InsertForm,InsertTextField,InsertTextarea,InsertButton,InsertCheckbox,InsertRadioButton,InsertListMenu,InsertFileField,InsertHiddenField,InsertFieldset,InsertLabel" />
+	</Toolbars>
+	-->
+</ktmlconfig>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<res id="ASP_SHELL_TRY_EXEC_ERROR"><![CDATA[Cannot execute shell command.]]></res>
+	<res id="ASP_SHELL_EXEC_ERROR"><![CDATA[Cannot execute shell command.]]></res>
+	<res id="ASP_SHELL_EXEC_TERMINATE"><![CDATA[Cannot execute shell command.]]></res>
+	<res id="ASP_SHELL_NOCMD_EXEC_OK"><![CDATA[Cannot execute shell command.]]></res>
+	<res id="ASP_SHELL_MISSING_OBJ"><![CDATA[Cannot execute shell command.]]></res>
+	<res id="ASP_SHELL_TRY_EXEC_ERROR_D"><![CDATA[Error trying to execute shell command '%s'.<br />Error description: %s<br />]]></res>
+	<res id="ASP_SHELL_EXEC_ERROR_D"><![CDATA[Error executing shell command '%s'.<br />Command returned: <pre>%s</pre><br />]]></res>
+	<res id="ASP_SHELL_EXEC_TERMINATE_D"><![CDATA[Execution of shell command '%s' took more than %s seconds and has been stoped.]]></res>
+	<res id="ASP_SHELL_NOCMD_EXEC_OK_D"><![CDATA[No shell command could be executed. Here is a trace of the execution: <br />%s]]></res>
+	<res id="ASP_SHELL_MISSING_OBJ_D"><![CDATA[Missing WScript.Shell object on server.<br />The error returned is: '%s'.]]></res>
+</resources>
