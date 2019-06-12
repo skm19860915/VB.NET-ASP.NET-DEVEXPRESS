@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Logo="" Title="KlemColl Data Manager">
+  <SchemaModules>
+    <SchemaModule Name="SystemAspNetModule" Version="14.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="14.1.6.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Images_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="29.333333333333332">
+            <LayoutGroup Id="Images" RelativeSize="100">
+              <LayoutGroup Id="Images_col1" RelativeSize="48.533333333333331">
+                <LayoutItem Id="Refid" SizeConstraintsType="Default" Index="0" RelativeSize="17.391304347826086" />
+                <LayoutItem Id="ListItems" SizeConstraintsType="Default" Index="1" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="CropVersion" SizeConstraintsType="Default" Index="2" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="SignedAvailable" SizeConstraintsType="Default" Index="3" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="Sequence" SizeConstraintsType="Default" Index="4" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="Name" SizeConstraintsType="Default" Index="5" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="PhotographerFirstName" SizeConstraintsType="Default" Index="6" RelativeSize="17.391304347826086" />
+                <LayoutItem Id="ImagesID" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Images_col2" RelativeSize="48.533333333333331">
+                <LayoutItem Id="PhotographerLastName" SizeConstraintsType="Default" RelativeSize="17.391304347826086" />
+                <LayoutItem Id="PhotoType" SizeConstraintsType="Default" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="RaceType" SizeConstraintsType="Default" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="MakeOfCar" SizeConstraintsType="Default" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="PhotoYear" SizeConstraintsType="Default" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="DriverFirstName" SizeConstraintsType="Default" RelativeSize="13.043478260869565" />
+                <LayoutItem Id="DriverLastName" SizeConstraintsType="Default" RelativeSize="17.391304347826086" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="70.666666666666671">
+            <LayoutItem Id="Description" SizeConstraintsType="Default" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Images_ListView">
+      <Columns>
+        <ColumnInfo Id="Refid" Index="0" />
+        <ColumnInfo Id="Name" Index="1" />
+        <ColumnInfo Id="Description" ToolTip="" Index="2" Removed="True" />
+        <ColumnInfo Id="PhotoType" ToolTip="" Index="3" />
+        <ColumnInfo Id="RaceType" Index="4" />
+        <ColumnInfo Id="CropVersion" Index="5" />
+        <ColumnInfo Id="MakeOfCar" Index="6" />
+        <ColumnInfo Id="PhotographerFirstName" Index="7" />
+        <ColumnInfo Id="PhotographerLastName" Index="8" />
+        <ColumnInfo Id="DriverFirstName" Index="9" />
+        <ColumnInfo Id="DriverLastName" Index="10" />
+        <ColumnInfo Id="ImagesID" Removed="True" />
+        <ColumnInfo Id="ListItems" Removed="True" />
+        <ColumnInfo Id="PhotoYear" Removed="True" />
+        <ColumnInfo Id="Sequence" Removed="True" />
+        <ColumnInfo Id="SignedAvailable" Removed="True" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

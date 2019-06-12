@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<StructureOptions>
+	<RequiredCartFields>
+		<Table Name="Inventory">
+			<Field Name="SmallImage" DataType="varchar(100)" />
+			<Field Name="MediumImage" DataType="varchar(100)" />
+			<Field Name="LargeImage" DataType="varchar(100)" />
+			<Field Name="DistID" DataType="varchar(20)" />
+		</Table>
+		<Table Name="Host">
+			<Field Name="HostID" DataType="int" />
+		</Table>
+	</RequiredCartFields>
+	<CompleteTables>
+		<Table Name="AAIAMstr" />
+		<Table Name="CodesMfg" />
+		<Table Name="CodesCat" />
+		<Table Name="CodesCatSub" />
+		<Table Name="CodesFlags" />
+	</CompleteTables>
+	<InventoryChildren>
+		<Table Name="InventoryAlt" />
+		<Table Name="InventoryCat" />
+		<Table Name="InventoryNotes" />
+		<Table Name="InventoryUpSale" />
+		<Table Name="InventoryXref" />
+	</InventoryChildren>
+	<AllowTextFields>
+		<Table Name="InventoryNotes" />
+	</AllowTextFields>
+</StructureOptions>

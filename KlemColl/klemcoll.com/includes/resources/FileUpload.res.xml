@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<res id="UPLOAD_EXT_NOT_ALLOWED"><![CDATA[File extension not allowed for upload.]]></res>
+	<res id="UPLOAD_FILE_EXISTS"><![CDATA[File already exists in the destination folder.]]></res>
+	<res id="UPLOAD_CHECK_SIZE_S"><![CDATA[File size must be greater than %s kB.]]></res>
+	<res id="UPLOAD_CHECK_SIZE_G"><![CDATA[File size must be less than %s kB.]]></res>
+	<res id="ASP_UPLOAD_ERR_STREAM_WRITE"><![CDATA[Upload failed.]]></res>
+	<res id="ASP_UPLOAD_ERR_CREATE_TEMP"><![CDATA[Upload failed.]]></res>
+	<res id="ASP_UPLOAD_MISSING_TEMP"><![CDATA[Upload failed.]]></res>
+	<res id="ASP_UPLOAD_ERR_BINARY_READ"><![CDATA[Upload failed.]]></res>
+	<res id="ASP_UPLOAD_MISSING_FILE"><![CDATA[Upload failed.]]></res>
+	<res id="ASP_UPLOAD_INVALID_FIELDNAME"><![CDATA[The file to upload is required.]]></res>
+	<res id="ASP_UPLOAD_FILE_REQUIRED"><![CDATA[The file to upload is required.]]></res>
+	<res id="ASP_UPLOAD_MOVE_TMP_ERROR"><![CDATA[File upload error.]]></res>
+	<res id="ASP_UPLOAD_MAX_AUTORENAME"><![CDATA[File upload error.]]></res>
+	<res id="UPLOAD_EXT_NOT_ALLOWED_D"><![CDATA[File extension "%s" is not allowed for upload.]]></res>
+	<res id="UPLOAD_FILE_EXISTS_D"><![CDATA[The file "%s" already exists in the destination folder.]]></res>
+	<res id="UPLOAD_CHECK_SIZE_S_D"><![CDATA[File size must be greater than %s kB.]]></res>
+	<res id="UPLOAD_CHECK_SIZE_G_D"><![CDATA[File size must be less than %s kB.]]></res>
+	<res id="ASP_UPLOAD_ERR_STREAM_WRITE_D"><![CDATA[Error writing uploaded files.<br />Please make sure that '%s' folder has write permission set for IUSR_[Machine Name] user account."]]></res>
+	<res id="ASP_UPLOAD_ERR_CREATE_TEMP_D"><![CDATA[Error creating temporary upload folder: '%s'<br />Please create that folder and set read/write/modify permissions for IUSR_[Machine Name] user account.]]></res>
+	<res id="ASP_UPLOAD_MISSING_TEMP_D"><![CDATA[Couldn't find '%s' folder, so there is no temporary folder where to upload the files.]]></res>
+	<res id="ASP_UPLOAD_ERR_BINARY_READ_D"><![CDATA[System reported this error:<br />%s<br />The most likely cause for this error is the incorrect setup of AspMaxRequestEntityAllowed in the IIS MetaBase.<br />Please ask your administrator to increase the value for AspMaxRequestEntityAllowed.]]></res>
+	<res id="ASP_UPLOAD_MISSING_FILE_D"><![CDATA[File '%s' not found in temporary upload folder.]]></res>
+	<res id="ASP_UPLOAD_INVALID_FIELDNAME_D"><![CDATA[Please make sure that the input file specified '%s' exists in the form.]]></res>
+	<res id="ASP_UPLOAD_FILE_REQUIRED_D"><![CDATA[No file was submitted in the input form field '%s'.]]></res>
+	<res id="ASP_UPLOAD_MOVE_TMP_ERROR_D"><![CDATA[Error moving uploaded file from temporary folder to destination folder '%s'.<br />Please make sure that IUSR_[Machine Name] user account has write permission on destination folder and modify permission on temporary folder. <br />Error returned is: %s.]]></res>
+	<res id="ASP_UPLOAD_MAX_AUTORENAME_D"><![CDATA[Error auto renaming file. The maximum index value for autorename has been reached (%s).]]></res>
+	<res id="NET_UPLOAD_SAVE_ERROR"><![CDATA[Error uploading file.]]></res>
+	<res id="NET_UPLOAD_SAVE_ERROR_D"><![CDATA[Error saving uploaded file to destination folder '%s'.<br />Please give write permission for ASP.NET user account (for Windows XP or Window 2000) or NETWORK SERVICE user account (for Windows 2003) on that folder. <br />Error returned is: %s.]]></res>
+	<res id="NET_UPLOAD_INVALID_CONTEXT"><![CDATA[Error uploading file.]]></res>
+	<res id="NET_UPLOAD_INVALID_CONTEXT_D"><![CDATA[Please call setContext(HttpContext param) method for the FileUpload object.]]></res>
+</resources>
