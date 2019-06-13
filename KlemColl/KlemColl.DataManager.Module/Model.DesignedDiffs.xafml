@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="KlemColl Data Manager" Logo="ModelEditor_Settings">
-  <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="14.1.6.0" IsNewNode="True" />
-  </SchemaModules>
-</Application>
