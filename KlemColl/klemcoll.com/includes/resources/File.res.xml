@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<res id="ASP_FILE_FOLDER_ERROR"><![CDATA[File Error: %s %s.]]></res>
+	<res id="ASP_FILE_FOLDER_ERROR_D"><![CDATA[File Error: %s %s.]]></res>
+	<res id="ASP_FILE_CHECK_FOLDER_ERROR"><![CDATA[File Error: %s. Internal Error.]]></res>
+	<res id="ASP_FILE_CHECK_FOLDER_ERROR_D"><![CDATA[File Error: %s. No %s permissions in %s folder.]]></res>
+	<res id="ASP_FILE_READ_ERROR"><![CDATA[File Error. Internal Error.]]></res>
+	<res id="ASP_FILE_READ_ERROR_D"><![CDATA[File Error. Reading File: %s.]]></res>
+	<res id="ASP_FILE_WRITE_ERROR"><![CDATA[File Error. Internal Error.]]></res>
+	<res id="ASP_FILE_WRITE_ERROR_D"><![CDATA[File Error. Writing content to file: %s.]]></res>
+	<res id="ASP_FILE_DELETE_ERROR"><![CDATA[File Error. Internal Error.]]></res>
+	<res id="ASP_FILE_DELETE_ERROR_D"><![CDATA[File Error. Deleting File: %s.]]></res>
+	<res id="ASP_FILE_CREATE_ERROR"><![CDATA[File Error. Internal Error.]]></res>
+	<res id="ASP_FILE_CREATE_ERROR_D"><![CDATA[File Error. Creating File: %s.]]></res>
+	<res id="ASP_FILE_RENAME_NO_FILE"><![CDATA[File Error. Internal Error.]]></res>
+	<res id="ASP_FILE_RENAME_NO_FILE_D"><![CDATA[File Error. File source missing: %s.]]></res>
+	<res id="ASP_FILE_RENAME_EXISTS"><![CDATA[File Error. Internal Error.]]></res>
+	<res id="ASP_FILE_RENAME_EXISTS_D"><![CDATA[File Error. File destination already exists: %s.]]></res>
+	<res id="ASP_FILE_RENAME"><![CDATA[File Error. Internal Error.]]></res>
+	<res id="ASP_FILE_RENAME_D"><![CDATA[File Error. Error renaming file '%s' to '%s'. <br />%s.]]></res>
+	<res id="ASP_FILE_COPY_NO_FILE"><![CDATA[File Error. Internal Error.]]></res>
+	<res id="ASP_FILE_COPY_NO_FILE_D"><![CDATA[File Error. File source missing: %s.]]></res>
+	<res id="ASP_FILE_COPY_EXISTS"><![CDATA[File Error. Internal Error.]]></res>
+	<res id="ASP_FILE_COPY_EXISTS_D"><![CDATA[File Error. File destination already exists: %s.]]></res>
+	<res id="ASP_FILE_COPY"><![CDATA[File Error. Internal Error.]]></res>
+	<res id="ASP_FILE_COPY_D"><![CDATA[File Error. Error copying file '%s' to '%s'. <br />%s.]]></res>
+</resources>
